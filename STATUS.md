@@ -17,7 +17,8 @@ Scope update, 2026-10-20: added `docs/project/REFRESH_INTERVAL.md` for the reque
 - `upstream`: `https://github.com/Bangerz/CodexMeter.git`.
 - Baseline: `7c6a4121144685a01b8f6dcb7b24e258709990eb` (`Use direct goal lifecycle controls for quota rules`), equal on both fetched main branches.
 - Current branch: `feature/banked-reset-credits`, created from `origin/main`.
-- Local `main` tracks `origin/main`; feature branch has no upstream until its own first push.
+- Local `main` tracks `origin/main`; feature branch is to track `origin/feature/banked-reset-credits` on its first push.
+- Standing instruction: automatically commit and push completed project changes to the Hudson Helm fork for this project's duration. Verify remote synchronization and report failures.
 - No `AGENTS.md`, contribution guide or GitHub PR template existed in the fetched baseline. Root project instructions were added during planning.
 - SDK available: .NET 10.0.402.
 

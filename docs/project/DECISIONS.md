@@ -31,3 +31,7 @@ Commodore added a tray-menu interval selector for 1, 5, 15, 30 and 60 minutes, d
 Verified source currently uses 10 minutes in `TrayApp.PollInterval` and popup status text. Implement the requested 15-minute default rather than preserving that baseline value. Reuse the existing per-user registry convention and Windows Forms polling timer; keep manual/launch/due-on-resume behavior and in-progress protection.
 
 For an idle interval change, restart the countdown from selection time without fetching immediately. During a running refresh, keep its timer stopped and use the latest selected interval at completion. Keep selected-menu state, deadline, stale threshold and display text consistent. The new setting does not authorize a settings redesign or changes to other timers. Both feature sets must pass before release.
+
+## 2026-10-20 — Automatic commits and GitHub pushes
+
+Commodore authorized committing and pushing all project changes for the duration of this project without further requests. Apply this to code, documentation and planning changes on the feature branch in the Hudson Helm fork. Use coherent commits and appropriate checks, verify remote synchronization, and report failures. Keep private/generated artifacts excluded. Existing restrictions on merging main and opening an upstream PR remain in force.
