@@ -4,7 +4,7 @@ Updated: 2026-10-20, America/New_York.
 
 ## Current state
 
-Repository and planning setup are complete. Banked resets, refresh settings and the approved UI/tray/settings/installer enhancements are specified but not implemented. No application release has been published and no website change has been made. Publishing this documentation does not complete a feature gate.
+Repository and planning setup are complete. The expanded-view heading now displays `CodexMeter`; this isolated display-text change is implemented and preview-verified. Banked resets, refresh settings and other approved UI/tray/settings/installer enhancements remain pending. No application release has been published and no website change has been made.
 
 The original handoff is preserved at `CodexMeter-banked-reset-credits-handoff.md`. Read `PROJECT_PLAN.md` for the full definition of done.
 
@@ -44,6 +44,8 @@ The first test invocation used the default .NET CLI environment and printed its 
 These results establish a baseline only. The application has not been launched for live verification, and all feature and release acceptance rows remain pending. Generated build output stays ignored under the existing ignore rules.
 
 ## Pending work
+
+Expanded-heading verification: `.\build.ps1` passed after changing only the two heading text assignments in `UsagePopup.cs`. The original heading combined Codex with the account plan; the fixed heading is CodexMeter and the secondary text is empty. Plan parsing/data is unchanged. Existing `--preview` output was generated before/after under ignored `artifacts/label-before/` and `artifacts/label-after/`. Visually inspected updated two-window and weekly previews: heading is readable, no header overlap; existing styling/layout/scrollbars remain. Before/after dimensions match: two-window 344x428, weekly 344x297, unavailable 344x271. No new tests or test-framework changes were needed for this text-only edit; no live-account comparison is claimed. The separate scrollbar-removal gate is still pending.
 
 Documentation integration checks: all 21 addendum sections mapped; local Markdown links resolved; Git diff whitespace check passed. No application source, build scripts or tests changed in this update, so baseline test results above were not rerun or represented as new-feature results.
 

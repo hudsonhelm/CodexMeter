@@ -2,6 +2,8 @@
 
 Status: approved scope integrated; implementation and validation pending. Source: [unaltered handoff addendum](../../CodexMeter-UI-Tray-Enhancements-Handoff-Addendum.md). This document reconciles it with earlier requirements; it does not claim delivered functionality.
 
+Subsequent display-text change: expanded-view heading is exactly `CodexMeter`, without the plan suffix. Implemented and preview-verified as an isolated text change; existing layout/scrolling/styling were preserved. This does not change the requested native hover title `Codex Meter`, and scrollbar removal remains pending. See STATUS.md for evidence.
+
 ## Requirement precedence
 
 The latest user-approved addendum replaces earlier restrictions on tray presentation, a new installer, popup scrolling, direct-menu interval selection and leaving presentation timers unchanged. Preserve banked-reset null/zero semantics, usage-window calculations/order, authentication and read-only polling. Preserve existing optional features and the dark dashboard, with configuration moved into Settings. Keep the current branch and automatic commit/push workflow.

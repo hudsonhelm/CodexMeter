@@ -104,6 +104,7 @@ These supplement the banked-reset checks. Full requirement: `../project/REFRESH_
 
 | Check | Expected result | Result / evidence |
 | --- | --- | --- |
+| Expanded-view heading text | Exactly CodexMeter; no plan suffix; preserve current layout/scrolling/styling for this isolated change | Passed 2026-10-20: Release build; visually inspected weekly/two-window synthetic previews; before/after dimensions unchanged at 344x297 / 344x428 (unavailable 344x271 also unchanged). See STATUS.md. Separate scrollbar fix pending. |
 | Positive and zero previews | Usage resets row displays N available | Pending |
 | Unknown preview | Row omitted, no fake zero | Pending |
 | Existing windows plus added row | No horizontal/vertical scrollbar or hidden clipping; correct client size and tray positioning | Pending |
