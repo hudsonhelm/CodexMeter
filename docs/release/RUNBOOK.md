@@ -8,6 +8,8 @@ Read `PROJECT_PLAN.md`, `STATUS.md` and `docs/validation/ACCEPTANCE.md`. Check b
 
 Select a distinct fork semantic version and update the project version plus any displayed/reported client version consistently. Write accurate candidate release notes and install instructions; preserve upstream attribution, CC0 license and existing branding. Review fork download links and image references in the packaged README. The old upstream release notes are historical evidence, not results for this build.
 
+Include both banked resets and configurable refresh in release validation/notes. Document the 15-minute fresh-install default and 1/5/15/30/60-minute choices, persistence and immediate application. Replace baseline hardcoded 10-minute guidance as part of implementation. Verify a clean configuration defaults to 15 and an existing saved choice survives replacing/restarting the app. Manual, launch, due-on-resume and no-overlap checks must pass before packaging is declared ready.
+
 ## Build and test
 
 Run from the project root. Each command below is independently copyable. Record output and exit status in status/acceptance records.

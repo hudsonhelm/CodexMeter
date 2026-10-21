@@ -23,3 +23,11 @@ Do not merge main or open an upstream PR under the handoff alone. Prepare its de
 ## 2026-10-20 — Website boundary
 
 Historical memory was used only to preserve the separation between website work and mail infrastructure. Hosting details have not been revalidated. The old `P:\HH_Website_Cert_2026` path was absent during setup. Discover current deployment access; do not infer it from historical certificates or server addresses.
+
+## 2026-10-20 — Configurable refresh scope addition
+
+Commodore added a tray-menu interval selector for 1, 5, 15, 30 and 60 minutes, default 15, persisted and applied without restart. This explicitly supersedes the prior plan/handoff restriction on changing refresh frequency for interval configuration. Preserve the original handoff and record the addition in `REFRESH_INTERVAL.md`.
+
+Verified source currently uses 10 minutes in `TrayApp.PollInterval` and popup status text. Implement the requested 15-minute default rather than preserving that baseline value. Reuse the existing per-user registry convention and Windows Forms polling timer; keep manual/launch/due-on-resume behavior and in-progress protection.
+
+For an idle interval change, restart the countdown from selection time without fetching immediately. During a running refresh, keep its timer stopped and use the latest selected interval at completion. Keep selected-menu state, deadline, stale threshold and display text consistent. The new setting does not authorize a settings redesign or changes to other timers. Both feature sets must pass before release.

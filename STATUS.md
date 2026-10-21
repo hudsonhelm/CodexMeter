@@ -4,9 +4,11 @@ Updated: 2026-10-20, America/New_York.
 
 ## Current state
 
-Repository and planning setup are complete. The banked-reset feature is not implemented. No release has been published and no website change has been made.
+Repository and planning setup are complete. The banked-reset feature and configurable refresh interval are not implemented. No release has been published and no website change has been made.
 
 The original handoff is preserved at `CodexMeter-banked-reset-credits-handoff.md`. Read `PROJECT_PLAN.md` for the full definition of done.
+
+Scope update, 2026-10-20: added `docs/project/REFRESH_INTERVAL.md` for the requested 1/5/15/30/60-minute tray selector, persisted settings and immediate timer application. Required default is 15 minutes. Source inspection confirms the fetched baseline uses 10 minutes, existing settings use `HKCU\Software\CodexMeter`, and polling already has an in-progress guard. These are implementation inputs, not evidence that the new behavior is implemented.
 
 ## Repository evidence
 
@@ -37,11 +39,12 @@ These results establish a baseline only. The application has not been launched f
 ## Pending work
 
 1. Implement and test reset count parsing and popup presentation.
-2. Verify live count and ordinary tray behavior; record compatibility and account limitations.
-3. Complete friend-readiness trial, clean install and another-machine test.
-4. Create versioned fork candidate and verify package contents and hashes.
-5. Inspect current HudsonHelm website and deployment access, publish link, verify downloaded artifact and rollback.
-6. Obtain Commodore's readiness decision, commit/push completed work and prepare upstream description.
+2. Implement configurable interval with 15-minute default, existing per-user persistence, checked menu, immediate timer/deadline updates, dynamic status text and concurrency/launch/resume regression checks.
+3. Verify live count, interval selection/restart/resume and ordinary tray behavior; record compatibility and account limitations.
+4. Complete friend-readiness trial, clean install and another-machine test.
+5. Create versioned fork candidate and verify package contents and hashes.
+6. Inspect current HudsonHelm website and deployment access, publish link, verify downloaded artifact and rollback.
+7. Obtain Commodore's readiness decision, commit/push completed work and prepare upstream description.
 
 ## Unresolved release facts
 

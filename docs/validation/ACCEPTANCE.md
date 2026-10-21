@@ -19,6 +19,27 @@ Status: Pending unless a row has dated evidence. Do not substitute synthetic pre
 | Prompt and goal suites with fake helpers | Pass; no live prompt or goal mutation | Pending |
 | Release build and package | Successful from final recorded commit | Pending |
 
+## Refresh interval checks
+
+These supplement the banked-reset checks. Full requirement: `../project/REFRESH_INTERVAL.md`. All results below are pending implementation.
+
+| Check | Expected result | Result / evidence |
+| --- | --- | --- |
+| Fresh / missing setting | 15-minute timer and exactly one checked menu choice | Pending |
+| All five supported choices | 1, 5, 15, 30 and 60 minutes update timer, deadline and check state immediately | Pending |
+| Restart persistence | Each saved supported interval reloads accurately | Pending |
+| Invalid / unreadable setting | Safe 15-minute fallback | Pending |
+| Save failure | Existing error convention; truthful active/checked/saved state | Pending |
+| Idle selection | New countdown from selection; no immediate extra request; same-choice selection does nothing | Pending |
+| Selection during poll | No timer rearm/duplicate; newest interval used at completion | Pending |
+| Manual Refresh now / popup Refresh | Immediate when idle at every interval, same handler path | Pending |
+| Launch | Initial refresh at any saved interval | Pending |
+| Resume before / after deadline | Existing wait before deadline; immediate single refresh when due | Pending |
+| Coincident timer/manual/resume events | At most one in-flight poll; exit cannot restart timer | Pending |
+| Staleness, popup text and diagnostics | Use selected interval; preserve existing stale grace | Pending |
+| Usage and banked resets | Values, semantics, icon metric and request sequence unchanged | Pending |
+| Real menu / restart / sleep-resume | Visible selection, persistence and scheduling manually verified | Pending |
+
 ## UI and live checks
 
 | Check | Expected result | Result / evidence |
