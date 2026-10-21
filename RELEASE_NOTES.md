@@ -1,3 +1,5 @@
+> Historical upstream release notes. Planned Hudson Helm enhancements and installer requirements are tracked in [roadmap #1](https://github.com/hudsonhelm/CodexMeter/issues/1), [the plan](PROJECT_PLAN.md) and [the release runbook](docs/release/RUNBOOK.md). No new fork application release is claimed here.
+
 ## Codex Meter v0.1.0
 
 A minimal native Windows 11 tray display for your Codex limits.

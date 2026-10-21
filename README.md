@@ -1,5 +1,7 @@
 # Codex Meter
 
+> **Hudson Helm fork — planned enhancements:** [roadmap #1](https://github.com/hudsonhelm/CodexMeter/issues/1) and [project plan](PROJECT_PLAN.md) track banked resets, Settings-based refresh, a scrollbar-free popup, configurable native hover/tray presentation and a Windows installer. See the [UI/tray specification](docs/project/UI_TRAY_SETTINGS.md). These enhancements are not implemented or released yet; the usage/install instructions below describe the fetched baseline.
+
 **Your Codex limits, beside the Windows clock.**
 
 A minimal native Windows 11 tray app. The icon shows your lowest percentage remaining; click it for all reported limits and reset times. Refreshes every **10 minutes**, with **no model calls or token consumption for polling**.

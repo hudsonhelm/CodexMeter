@@ -4,13 +4,17 @@ Updated: 2026-10-20, America/New_York.
 
 ## Current state
 
-Repository and planning setup are complete. The banked-reset feature and configurable refresh interval are not implemented. No release has been published and no website change has been made.
+Repository and planning setup are complete. Banked resets, refresh settings and the approved UI/tray/settings/installer enhancements are specified but not implemented. No application release has been published and no website change has been made. Publishing this documentation does not complete a feature gate.
 
 The original handoff is preserved at `CodexMeter-banked-reset-credits-handoff.md`. Read `PROJECT_PLAN.md` for the full definition of done.
 
 Public roadmap: [GitHub issue #1](https://github.com/hudsonhelm/CodexMeter/issues/1), labeled enhancement and assigned to hudsonhelm. Issues were enabled on the fork to publish the scope, milestone checklist, baseline evidence and definition of done. No upstream issue or pull request was opened.
 
-Scope update, 2026-10-20: added `docs/project/REFRESH_INTERVAL.md` for the requested 1/5/15/30/60-minute tray selector, persisted settings and immediate timer application. Required default is 15 minutes. Source inspection confirms the fetched baseline uses 10 minutes, existing settings use `HKCU\Software\CodexMeter`, and polling already has an in-progress guard. These are implementation inputs, not evidence that the new behavior is implemented.
+Scope update, 2026-10-20: `docs/project/REFRESH_INTERVAL.md` covers the requested 1/5/15/30/60-minute selector, default 15, persisted and applied immediately. The UI/tray addendum now places it in Settings > General. Source uses 10 minutes, HKCU settings and an in-progress guard; these are baseline inputs, not implemented changes.
+
+UI/tray addendum integrated: `CodexMeter-UI-Tray-Enhancements-Handoff-Addendum.md` is preserved unchanged, with all 21 sections mapped in `docs/project/UI_TRAY_SETTINGS.md`. Plan, refresh spec, acceptance matrix, decisions, release/website guidance, agent instructions and public roadmap incorporate the expanded scope. New requirements supersede earlier fixed-tray, scrolling, direct-menu refresh and ZIP-only assumptions.
+
+Verified source constraints: popup currently enables AutoScroll and caps its height; optional cost hover suppresses native tooltip text; tray uses MostLimited with pace colors and a bottom bar. Resolve layout, hover coexistence, fresh defaults and legacy migration explicitly during implementation. Installer tooling/prerequisites and exact data-migration behavior remain unverified.
 
 ## Repository evidence
 
@@ -41,14 +45,18 @@ These results establish a baseline only. The application has not been launched f
 
 ## Pending work
 
+Documentation integration checks: all 21 addendum sections mapped; local Markdown links resolved; Git diff whitespace check passed. No application source, build scripts or tests changed in this update, so baseline test results above were not rerun or represented as new-feature results.
+
 1. Implement and test reset count parsing and popup presentation.
-2. Implement configurable interval with 15-minute default, existing per-user persistence, checked menu, immediate timer/deadline updates, dynamic status text and concurrency/launch/resume regression checks.
-3. Verify live count, interval selection/restart/resume and ordinary tray behavior; record compatibility and account limitations.
-4. Complete friend-readiness trial, clean install and another-machine test.
-5. Create versioned fork candidate and verify package contents and hashes.
-6. Inspect current HudsonHelm website and deployment access, publish link, verify downloaded artifact and rollback.
-7. Obtain Commodore's readiness decision, commit/push completed work and prepare upstream description.
+2. Fix popup layout without scrollbars or clipped content at supported display scales/work areas.
+3. Implement shared persistent Settings/migration, simple menu and configurable polling; preserve existing detailed controls.
+4. Implement shared metrics, native configurable hover, one-second cached countdowns, tray selections/styles/colors and weekly-first exhaustion switching.
+5. Verify all automated/visual/live matrices, CPU/resources, restart/resume and no-extra-request behavior.
+6. Build per-user installer, preferably Inno Setup; test clean install, upgrade, uninstall, data preservation and synchronized startup.
+7. Complete working-day trial and another-machine downloaded-installer test; obtain Commodore's readiness decision.
+8. Publish versioned fork installer/checksums, add website link, verify downloaded bytes/installation and record rollback.
+9. Keep GitHub roadmap/branch current and prepare coherent upstream contribution description without merging or opening a PR.
 
 ## Unresolved release facts
 
-Candidate version, source commit, ZIP hash, live count, tested Codex versions, independent test machine, readiness decision, public release URL and website download URL are not yet established. No credentials or deployment details are stored in these documents.
+Candidate version/source commit, installer tool/version/hash, optional ZIP hash, live count, tested Codex versions, migration decisions, measured CPU/resource results, independent test machine, readiness decision and public release/download URLs remain unestablished. No credentials or deployment details are stored here.
