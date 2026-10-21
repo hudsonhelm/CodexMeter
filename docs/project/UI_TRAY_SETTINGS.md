@@ -2,7 +2,7 @@
 
 Status: approved scope integrated; implementation and validation pending. Source: [unaltered handoff addendum](../../CodexMeter-UI-Tray-Enhancements-Handoff-Addendum.md). This document reconciles it with earlier requirements; it does not claim delivered functionality.
 
-Subsequent display-text change: expanded-view heading is exactly `CodexMeter`, without the plan suffix. Implemented and preview-verified as an isolated text change; existing layout/scrolling/styling were preserved. This does not change the requested native hover title `Codex Meter`, and scrollbar removal remains pending. See STATUS.md for evidence.
+Subsequent planned display-text change: expanded-view heading must be exactly `CodexMeter`, without the plan suffix. Pending implementation; preserve existing layout/scrolling/styling and verify the rendered text/layout when authorized. This does not change the native hover title `Codex Meter`; scrollbar removal remains a separate requirement. Commodore clarified that the current request adds to the plan only.
 
 ## Requirement precedence
 

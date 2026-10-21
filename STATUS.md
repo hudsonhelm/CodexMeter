@@ -4,7 +4,7 @@ Updated: 2026-10-20, America/New_York.
 
 ## Current state
 
-Repository and planning setup are complete. The expanded-view heading now displays `CodexMeter`; this isolated display-text change is implemented and preview-verified. Banked resets, refresh settings and other approved UI/tray/settings/installer enhancements remain pending. No application release has been published and no website change has been made.
+Repository and planning setup are complete. The expanded-view heading requirement is planned, not implemented. Banked resets, refresh settings and other approved UI/tray/settings/installer enhancements remain pending. No application release has been published and no website change has been made. Commodore clarified that the heading request was documentation-only; continue planning until implementation is authorized.
 
 The original handoff is preserved at `CodexMeter-banked-reset-credits-handoff.md`. Read `PROJECT_PLAN.md` for the full definition of done.
 
@@ -45,7 +45,7 @@ These results establish a baseline only. The application has not been launched f
 
 ## Pending work
 
-Expanded-heading verification: `.\build.ps1` passed after changing only the two heading text assignments in `UsagePopup.cs`. The original heading combined Codex with the account plan; the fixed heading is CodexMeter and the secondary text is empty. Plan parsing/data is unchanged. Existing `--preview` output was generated before/after under ignored `artifacts/label-before/` and `artifacts/label-after/`. Visually inspected updated two-window and weekly previews: heading is readable, no header overlap; existing styling/layout/scrollbars remain. Before/after dimensions match: two-window 344x428, weekly 344x297, unavailable 344x271. No new tests or test-framework changes were needed for this text-only edit; no live-account comparison is claimed. The separate scrollbar-removal gate is still pending.
+Correction: commit `527a0f1` prematurely implemented the heading text change and recorded preview/build results. Commodore clarified that it was a plan addition only. The source change is reverted in a follow-up commit, and its completed acceptance claim is withdrawn. Ignored `artifacts/label-after/` and the previously built executable reflect the superseded trial and are not release evidence. The heading requirement and separate scrollbar-removal gate are both pending. Source must match the pre-change application before this correction is closed.
 
 Documentation integration checks: all 21 addendum sections mapped; local Markdown links resolved; Git diff whitespace check passed. No application source, build scripts or tests changed in this update, so baseline test results above were not rerun or represented as new-feature results.
 

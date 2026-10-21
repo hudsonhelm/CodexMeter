@@ -2,7 +2,7 @@
 
 Date: 2026-10-20, America/New_York.
 
-Status: Planning and repository preparation complete; expanded-view heading implemented; remaining enhancements pending.
+Status: Planning and repository preparation complete; implementation pending.
 
 GitHub roadmap and progress checklist: [issue #1](https://github.com/hudsonhelm/CodexMeter/issues/1).
 
@@ -26,7 +26,7 @@ The original handoff defines banked-reset data semantics. The refresh request an
 
 ## Scope
 
-Expanded-view heading: display exactly `CodexMeter`, replacing the combined `Codex` plus account-plan heading (`Codex Plus` on a Plus account). This text-only change is implemented and preview-verified separately; preserve current layout, scrolling, styling and functionality in that change. The previously approved scrollbar removal remains a separate pending enhancement. Preserve plan data in the usage model/parser; this request changes only the visible heading.
+Expanded-view heading: display exactly `CodexMeter`, replacing the combined `Codex` plus account-plan heading (`Codex Plus` on a Plus account). This is a planned text-only change; preserve current layout, scrolling, styling and functionality when implementing it. Verify the rendered expanded view shows the exact text without overlap or layout regression. The previously approved scrollbar removal remains a separate pending enhancement. Preserve plan data in the usage model/parser; this requirement changes only the visible heading. Commodore clarified that the current request is documentation-only; do not implement it yet.
 
 Read top-level `rateLimitResetCredits.availableCount` from the existing `account/rateLimits/read` result. Model the value as nullable; show `N available` beside `Usage resets` for valid counts including zero, and omit the row when unavailable. Include the row in popup sizing, accessibility and stale-data handling. Fix the underlying layout so neither horizontal nor vertical scrollbars appear for supported content/display scenarios; preserve the polished dark dashboard.
 
@@ -45,7 +45,7 @@ Official protocol reference, checked 2026-10-20: <https://learn.chatgpt.com/docs
 | Milestone | Work | Exit evidence | State |
 | --- | --- | --- | --- |
 | 0. Establish baseline | Read complete handoff; verify fork/upstream; preserve source structure; create feature branch and project records; run baseline build and tests. | Source SHA, remotes, commands/results, current limitations in status. | Complete |
-| 0a. Expanded heading | Replace the composed Codex/plan heading with CodexMeter; preserve current rendering behavior. | Release build and rendered weekly/two-window previews; unchanged preview dimensions. | Complete |
+| 0a. Expanded heading | Replace the composed Codex/plan heading with CodexMeter; preserve current rendering behavior. | Release build and rendered weekly/two-window previews; unchanged preview dimensions. | Pending |
 | 1. Data and layout | Add nullable banked-reset parsing and popup row; resolve scrollbar causes without clipping or redesign. | Parser tests and scrollbar-free synthetic/live layouts. | Pending |
 | 1a. Shared settings and polling | Add small persistent settings, migration, centralized UI, simple context menu and immediate interval application. | All settings reload; existing features reachable; manual/launch/resume and concurrency checks pass. | Pending |
 | 1b. Native hover and live metrics | Shared metric model, configurable fields/order/defaults, tooltip budget, second-accurate cached countdowns. | Exact formatting, unavailable/expired behavior, native length and no-poll tick tests. | Pending |
@@ -110,4 +110,4 @@ Use `docs/release/RUNBOOK.md`. A successful upload alone is insufficient: click 
 9. Fresh tray defaults differ from the old most-limited/pace-color behavior. Explicitly separate fresh defaults from preserving legacy preferences; finalize migration and missing-window behavior before implementation tests.
 10. Tooltip length, small-icon readability, expired/stale timestamps and one-second resource churn need deterministic tests and actual tray checks. A standard icon asset and exhausted-countdown unknown fallback require documented choices.
 
-Next implementation step: inspect all snapshot/preview/settings/startup/notification paths and installer feasibility; settle bounded presentation/migration decisions from `docs/project/UI_TRAY_SETTINGS.md`. Implement in the milestone order above with separately reviewable commits. Baseline checks and the expanded-heading text change are complete; other enhancements remain pending.
+Next step: continue project planning until Commodore authorizes implementation. The expanded-heading request is a plan addition only. Baseline checks are complete; all requested enhancements remain pending.

@@ -38,7 +38,7 @@ internal sealed class UsagePopup : Form
         shell.RowStyles.Add(new RowStyle(SizeType.Absolute, 50));
         shell.RowStyles.Add(new RowStyle(SizeType.Absolute, 35));
         var header = new Panel { Dock = DockStyle.Fill, Margin = Padding.Empty };
-        header.Controls.Add(new Label { Text = "CodexMeter", AutoSize = true, Font = MakeFont(14, FontStyle.Bold), Location = Point.Empty });
+        header.Controls.Add(new Label { Text = "Codex", AutoSize = true, Font = MakeFont(14, FontStyle.Bold), Location = Point.Empty });
         plan = new Label { AutoSize = true, ForeColor = Muted, Location = new Point(86, 6) };
         header.Controls.Add(plan);
         var close = new Button { Text = "×", AccessibleName = "Close usage panel", Size = new Size(28, 27), Dock = DockStyle.Right,
@@ -71,7 +71,7 @@ internal sealed class UsagePopup : Form
         SuspendLayout();
         foreach (Control child in content.Controls.Cast<Control>().ToArray()) { content.Controls.Remove(child); child.Dispose(); }
         // Per-card fonts belong to the card and are explicitly disposed with it.
-        plan.Text = string.Empty;
+        plan.Text = snapshot?.Plan is { Length: > 0 } value ? char.ToUpperInvariant(value[0]) + value[1..] : "Usage";
         var scale = DeviceDpi / 96f;
         var multipleBuckets = snapshot?.Windows.Select(w => w.BucketId).Distinct().Count() > 1;
         var contentHeight = snapshot is { Windows.Count: > 0 }
