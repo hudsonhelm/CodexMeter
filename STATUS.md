@@ -8,6 +8,8 @@ Repository and planning setup are complete. The banked-reset feature and configu
 
 The original handoff is preserved at `CodexMeter-banked-reset-credits-handoff.md`. Read `PROJECT_PLAN.md` for the full definition of done.
 
+Public roadmap: [GitHub issue #1](https://github.com/hudsonhelm/CodexMeter/issues/1), labeled enhancement and assigned to hudsonhelm. Issues were enabled on the fork to publish the scope, milestone checklist, baseline evidence and definition of done. No upstream issue or pull request was opened.
+
 Scope update, 2026-10-20: added `docs/project/REFRESH_INTERVAL.md` for the requested 1/5/15/30/60-minute tray selector, persisted settings and immediate timer application. Required default is 15 minutes. Source inspection confirms the fetched baseline uses 10 minutes, existing settings use `HKCU\Software\CodexMeter`, and polling already has an in-progress guard. These are implementation inputs, not evidence that the new behavior is implemented.
 
 ## Repository evidence
@@ -17,7 +19,7 @@ Scope update, 2026-10-20: added `docs/project/REFRESH_INTERVAL.md` for the reque
 - `upstream`: `https://github.com/Bangerz/CodexMeter.git`.
 - Baseline: `7c6a4121144685a01b8f6dcb7b24e258709990eb` (`Use direct goal lifecycle controls for quota rules`), equal on both fetched main branches.
 - Current branch: `feature/banked-reset-credits`, created from `origin/main`.
-- Local `main` tracks `origin/main`; feature branch is to track `origin/feature/banked-reset-credits` on its first push.
+- Local `main` tracks `origin/main`; feature branch tracks `origin/feature/banked-reset-credits` and was first pushed successfully at `db061d7`.
 - Standing instruction: automatically commit and push completed project changes to the Hudson Helm fork for this project's duration. Verify remote synchronization and report failures.
 - No `AGENTS.md`, contribution guide or GitHub PR template existed in the fetched baseline. Root project instructions were added during planning.
 - SDK available: .NET 10.0.402.

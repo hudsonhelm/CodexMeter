@@ -4,6 +4,8 @@ Date: 2026-10-20, America/New_York.
 
 Status: Planning and repository preparation complete; implementation pending.
 
+GitHub roadmap and progress checklist: [issue #1](https://github.com/hudsonhelm/CodexMeter/issues/1).
+
 ## Outcome
 
 Deliver the Hudson Helm fork of CodexMeter with the available banked usage reset count visible in its existing popup and a persisted, configurable refresh interval defaulting to 15 minutes. Finish when we have enough evidence to confidently send the tested download to friends and a working download link is published on the HudsonHelm website.
