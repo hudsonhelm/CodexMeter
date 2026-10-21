@@ -44,13 +44,17 @@ Inspect ZIP contents and extract into a fresh directory. Confirm executable, REA
 
 ## Build and validate the installer
 
-Prefer Inno Setup with per-user installation; document a compelling reason for another conventional installer and a strong reason for MSIX. No installer script/compiler check exists yet: inspect availability/prerequisites, then add a repeatable build invocation and record it here. Do not invent a working command before tooling is established.
+Latest requirement (2026-10-21): prefer one `.msi`, otherwise one `.exe` installer, with no required loose sidecar payload. Evaluate a conventional MSI toolchain first; Inno Setup is an EXE fallback candidate rather than the default. Record format/tool choice and reason for fallback, review tool/version/license requirements, and retain per-user/no-unnecessary-admin preference. MSIX needs a strong reason. No installer script/compiler check exists yet: inspect availability/prerequisites, add a repeatable build invocation and record it here. Do not invent a working command before tooling is established.
+
+Decide whether to package a self-contained application or require an installed .NET Desktop Runtime. Test runtime-absent and runtime-present cases, package size and online/offline behavior. A single installer file does not promise runtime inclusion; document any prerequisite download explicitly. Do not nest unrelated installers or assume an MSI can install every prerequisite without evaluating the resulting user experience.
 
 Choose stable application identity, destination and upgrade detection. Inspect runtime prerequisite handling and any migration needed for settings/private prompt-rule data currently stored beside the executable. Preserve per-user preferences and actual startup choice on upgrades. Respect a running app, avoid duplicate instances and preserve notification shortcut/registration metadata at the installed path.
 
 Require Start Menu shortcut, Add/Remove Programs entry, clean uninstall and the selectable Start CodexMeter with Windows checkbox. A fresh checkbox is shown checked as requested; installation honors either choice, and upgrades preserve existing startup state. Installer, tray and Settings controls must update/read the same actual registration, with no duplicate startup paths. Prefer no admin elevation where feasible.
 
 In a clean standard-user environment test install with startup on and off, app/menu/Settings startup changes, restart, installed upgrade with nondefault settings, portable-to-installed migration, and uninstall. Record OS/runtime/compiler/version, results and any elevation. Confirm all fields/order/colors/metric/style/options and private data survive upgrade. Document preference/data retention and deliberate removal on uninstall; remove only owned registrations/files. Install and smoke-test the exact release bytes, not only a local development publish folder.
+
+Include repair where supported, reinstall, older-version policy and interruption recovery without resetting user choices or corrupting data. Verify writable per-user data paths and installed notification activation. Review signing feasibility and actual Windows download prompts; do not claim checksums eliminate trust warnings. Keep private signing material outside the repository. Test only within owned test environments.
 
 Hash the installer and any optional ZIP separately. Package only the intended executable/resources/license/docs; exclude all local settings, account diagnostics, prompt data and signing material. Record immutable filenames, source commit/tag, installer version and SHA-256 before publication.
 

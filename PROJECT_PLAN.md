@@ -1,6 +1,8 @@
 # CodexMeter project plan
 
-Date: 2026-10-20, America/New_York.
+Updated: 2026-10-21, America/New_York.
+
+Standalone reader/download edition: [CodexMeter-Project-Plan.md](CodexMeter-Project-Plan.md). It explains the phases, release gates and identified gaps without requiring other local documents.
 
 Status: Planning and repository preparation complete; implementation pending.
 
@@ -34,7 +36,7 @@ Put refresh choices of 1, 5, 15, 30 and 60 minutes in Settings > General; defaul
 
 Centralize configuration in Settings (General, Hover and Tray; Appearance only if useful). Keep the context menu simple: Show limits, Refresh now, Settings..., Start with Windows, Quit. Preserve existing optional prompt rules, cost-history controls and notification test access by relocating them into Settings. Add shared metric formatting for native hover and tray; native quota hover must remain available with optional cost features enabled.
 
-Support independently enabled/reordered hover fields and defaults, native tooltip length enforcement, all six required tray selections, both percentage styles, per-metric fixed colors, optional automatic status colors, and weekly-first exhausted-countdown switching with confirmed recovery. Update presentation from cached timestamps approximately once per second, separately from polling. Add a conventional per-user installer, preferably Inno Setup, with install/upgrade/uninstall, Start Menu, Add/Remove Programs, settings preservation and a synchronized startup checkbox.
+Support independently enabled/reordered hover fields and defaults, native tooltip length enforcement, all six required tray selections, both percentage styles, per-metric fixed colors, optional automatic status colors, and weekly-first exhausted-countdown switching with confirmed recovery. Update presentation from cached timestamps approximately once per second, separately from polling. Add a conventional per-user installer: preferably one MSI, otherwise one EXE, with install/upgrade/uninstall, Start Menu, Add/Remove Programs, settings preservation and a synchronized startup checkbox. The 2026-10-21 preference supersedes Inno Setup-first; runtime/toolchain decisions remain pending.
 
 Preserve quota-window parsing/order, reset timestamps, plan handling, authentication, optional automation semantics and existing startup/launch/resume functionality. Approved presentation and installation changes replace only their earlier restrictions. No redemption, detailed credit metadata, custom replacement tooltip, two-line tray countdown, telemetry, cloud dependency, database, framework switch or broad dependency upgrade.
 
@@ -51,7 +53,7 @@ Official protocol reference, checked 2026-10-20: <https://learn.chatgpt.com/docs
 | 1b. Native hover and live metrics | Shared metric model, configurable fields/order/defaults, tooltip budget, second-accurate cached countdowns. | Exact formatting, unavailable/expired behavior, native length and no-poll tick tests. | Pending |
 | 1c. Tray instrument | Metric selector, percentage styles, compact countdown, per-metric colors, automatic colors and weekly-first exhaustion override. | Selection/rendering/color/precedence/recovery tests and actual-resolution previews. | Pending |
 | 2. Regression and live confidence | Run all tests/builds; inspect UI at 100/125/150% (200% where practical), verify live account, timer behavior, startup/exit and CPU/resource use. | Recorded automated, visual, live and idle-vs-ticking measurements; no added quota requests from presentation. | Pending |
-| 3. Installer | Inspect packaging/runtime/startup/notification needs; implement preferably per-user Inno Setup and test install/upgrade/uninstall. | Start Menu and Add/Remove Programs work, settings survive upgrade, one synchronized startup entry; no unjustified elevation. | Pending |
+| 3. Installer | Inspect packaging/runtime/startup/notification needs; prefer one per-user MSI, otherwise one EXE; test install/upgrade/uninstall. | Single-file deliverable; prerequisites clear; Start Menu/Add/Remove Programs work, settings survive upgrade, one startup entry; no unjustified elevation. | Pending |
 | 4. Friend-ready candidate | Assign distinct fork version; package exact tested commit; verify installer/checksums; complete working-day trial and clean installation on another machine. | Candidate hashes, independent-machine results, defect disposition and Commodore readiness decision. | Pending |
 | 5. Publish download | Publish a versioned fork installer; inspect site; back up affected content; add HudsonHelm download link; verify public navigation, downloaded bytes and installation. | Release URL, site URL, final target, downloaded installer SHA-256, install smoke test, timestamp and rollback record. | Pending |
 | 6. Close and upstream preparation | Commit/push feature branch; review final diff; prepare accurate upstream PR description and final handoff. | Commit/push confirmation and completed acceptance record. No main merge or upstream PR opening unless requested. | Pending |
@@ -72,7 +74,7 @@ Proposed confidence threshold: a complete ordinary working day on the primary ma
 
 ## Distribution and website
 
-Publish an immutable, version-specific Windows installer on the Hudson Helm GitHub fork and link it from the existing website. Prefer Inno Setup, per-user installation and no administrator requirement where feasible. Record any justified alternative; avoid MSIX without a strong reason. A portable ZIP may remain optional and cannot substitute for installer acceptance. Confirm current site content/source/access/placement before website work.
+Publish an immutable, version-specific Windows installer on the Hudson Helm GitHub fork and link it from the existing website. Prefer one `.msi`, otherwise one `.exe`, with no required loose sidecar payload. Evaluate a conventional MSI toolchain first; Inno Setup remains an EXE fallback. Prefer per-user installation without unnecessary elevation; avoid MSIX without a strong reason. Decide self-contained application packaging versus a documented runtime prerequisite; one installer file does not imply an offline runtime bundle. A ZIP cannot substitute for installer acceptance. Confirm current site content/source/access/placement before website work.
 
 Include license, install/upgrade/uninstall/startup instructions, runtime requirements, accurate signing status and hashes for every artifact. Review fork release links. The fetched source/README use 10 minutes and a lowest-window tray; final documentation must reflect 15-minute configurable polling, fresh-install tray defaults, settings migration, native hover, automatic override and the installer. Historical release notes remain historical; do not claim planned features are already available.
 
@@ -86,6 +88,7 @@ Use `docs/release/RUNBOOK.md`. A successful upload alone is insufficient: click 
 - [ ] Popup has no scrollbars/clipping; native tooltip and selectable tray presentation work with persisted settings and required defaults.
 - [ ] Second-based countdowns use cached timestamps only; measured CPU/resource behavior is negligible and no extra quota requests occur.
 - [ ] Installer clean install, upgrade/settings preservation, Start Menu, Add/Remove Programs, uninstall and synchronized startup checks pass.
+- [ ] Installer is one MSI preferably, otherwise one EXE with recorded rationale; runtime-present/runtime-absent experience and selected tool/license requirements are verified.
 - [ ] Required automated suites and Release build pass on the final candidate.
 - [ ] Popup previews and live/manual observations support the intended behavior.
 - [ ] Fresh install, independent-machine smoke test and primary-machine trial are recorded.
@@ -98,6 +101,8 @@ Use `docs/release/RUNBOOK.md`. A successful upload alone is insufficient: click 
 - [ ] `STATUS.md` names the release, source commit, artifact hash, public URLs and any residual caveats.
 
 ## Risks and next actions
+
+Additional planning review: the standalone plan records overlooked-risk treatments for writable data migration, clock/DST changes, accessibility, settings-save errors, runtime absence, repair/reinstall/interrupted-upgrade behavior, download trust/signing and toolchain suitability. Resolve these within existing phases; review findings are decisions/tests, not implemented features or blanket scope expansion.
 
 1. Installed Codex may not expose resets yet: verify availability, preserve null, and record the compatibility limit.
 2. Current popup uses AutoScroll and a capped height. Resolve underlying layout for expected content and monitor work areas, including multiple buckets, without simply hiding overflow; record any physical fit limit before release.

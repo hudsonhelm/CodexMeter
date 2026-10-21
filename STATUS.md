@@ -1,8 +1,10 @@
 # CodexMeter status
 
-Updated: 2026-10-20, America/New_York.
+Updated: 2026-10-21, America/New_York.
 
 ## Current state
+
+Reader edition: `CodexMeter-Project-Plan.md` explains the complete phased plan in a standalone Markdown document. Latest installer requirement: prefer one `.msi`, otherwise one `.exe`; this supersedes Inno Setup-first. Runtime packaging/toolchain/format remain decisions to verify, not implemented work. Added planning risk review and corresponding acceptance coverage for data migration, clock/accessibility, install prerequisites, repair/recovery and release trust.
 
 Repository and planning setup are complete. The expanded-view heading requirement is planned, not implemented. Banked resets, refresh settings and other approved UI/tray/settings/installer enhancements remain pending. No application release has been published and no website change has been made. Commodore clarified that the heading request was documentation-only; continue planning until implementation is authorized.
 
@@ -54,7 +56,7 @@ Documentation integration checks: all 21 addendum sections mapped; local Markdow
 3. Implement shared persistent Settings/migration, simple menu and configurable polling; preserve existing detailed controls.
 4. Implement shared metrics, native configurable hover, one-second cached countdowns, tray selections/styles/colors and weekly-first exhaustion switching.
 5. Verify all automated/visual/live matrices, CPU/resources, restart/resume and no-extra-request behavior.
-6. Build per-user installer, preferably Inno Setup; test clean install, upgrade, uninstall, data preservation and synchronized startup.
+6. Prefer one per-user MSI installer, otherwise one EXE; test prerequisites, clean install, upgrade/repair/recovery, uninstall, data preservation and synchronized startup.
 7. Complete working-day trial and another-machine downloaded-installer test; obtain Commodore's readiness decision.
 8. Publish versioned fork installer/checksums, add website link, verify downloaded bytes/installation and record rollback.
 9. Keep GitHub roadmap/branch current and prepare coherent upstream contribution description without merging or opening a PR.

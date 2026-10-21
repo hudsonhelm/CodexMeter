@@ -51,3 +51,11 @@ Installer is now required, preferably per-user Inno Setup, with startup checkbox
 Commodore requested a plan addition for exactly `CodexMeter` in place of the expanded view's visible `Codex Plus`. Source composes that heading from a fixed Codex label and a dynamic plan label. During future implementation, change the heading text while retaining controls, font, positions, dimensions, AutoScroll, sizing and event behavior. Keep plan data/parser unchanged. This is separate from the scrollbar fix and does not rename hover text, tray labels or other surfaces.
 
 The assistant prematurely implemented/pushed the change in `527a0f1`. Commodore clarified that this was documentation-only; restore the source in a follow-up commit, withdraw completion claims and retain the requirement as pending. Continue planning until implementation is authorized. Earlier trial build/preview results do not count as delivered acceptance.
+
+## 2026-10-21 — Downloadable plan and MSI-first installer preference
+
+Commodore requested a standalone downloadable Markdown explanation and a review for forgotten requirements/product improvements. Added `CodexMeter-Project-Plan.md` covering scope, all phases, acceptance and a bounded gap review. Source implementation remains unauthorized.
+
+The latest explicit installer preference is one `.msi`, otherwise one `.exe`. It supersedes the earlier Inno Setup-first recommendation in historical decisions/addendum text. Evaluate an MSI toolchain such as WiX first and review current tool/version/license requirements. Inno Setup remains a single-EXE fallback candidate. Preserve all startup/upgrade/uninstall/per-user requirements. No required loose sidecar payload; optional ZIP is secondary.
+
+Runtime inclusion is a separate engineering decision: compare self-contained app payload against detected prerequisite guidance and test missing/present runtime and offline expectations. Added review items for writable private data, migration, repair/reinstall/interruption recovery, clock/DST changes, keyboard/contrast accessibility, signing/download trust and support guidance. These are planning decisions and validation work within existing phases, not delivered features or authorization for automatic updates/cloud/telemetry.

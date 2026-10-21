@@ -89,7 +89,7 @@ These supplement the banked-reset checks. Full requirement: `../project/REFRESH_
 
 | Check | Expected result | Result / evidence |
 | --- | --- | --- |
-| Installer build | Prefer Inno Setup; stable identity/version; record tool/compiler and output hash | Pending |
+| Installer build | Prefer one MSI; otherwise one EXE with rationale; no required loose sidecar payload; stable identity/version; record tool/license/compiler and hash | Pending |
 | Fresh per-user install | Standard account succeeds without unnecessary elevation; runtime prerequisites handled clearly | Pending |
 | OS integration | Start Menu shortcut and Add/Remove Programs entry correct; app launches once | Pending |
 | Startup selected / cleared | Both checkbox states honored; upgrade preserves existing choice | Pending |
@@ -99,6 +99,10 @@ These supplement the banked-reset checks. Full requirement: `../project/REFRESH_
 | Running app and notification shortcut | Safe upgrade handling; correct executable/shortcut/notification registration paths | Pending |
 | Uninstall | Installed files, shortcuts, startup and app-owned registrations removed; documented preference/data retention; unrelated data safe | Pending |
 | Downloaded installer | Hash matches candidate; clean install and tray smoke test succeed from public website path | Pending |
+| Runtime absent / present | Explicit self-contained or prerequisite decision; install/launch behavior clear; online/offline expectations documented | Pending |
+| Repair/reinstall/interrupted upgrade | Where supported, recover safely without losing settings/startup choice; older-version policy documented | Pending |
+| Writable data and notification paths | Standard user can save settings/data; portable migration and installed activation remain correct | Pending |
+| Signing and download experience | Record actual publisher/signing state and Windows prompts; accurate guidance and hashes | Pending |
 
 ## UI and live checks
 
@@ -120,6 +124,7 @@ These supplement the banked-reset checks. Full requirement: `../project/REFRESH_
 | Fresh standard-user installation | Correct runtime guidance; launch/quit/uninstall without developer environment | Pending |
 | Other Windows machine or clean VM | Downloaded candidate works; record OS, runtime, Codex version and result | Pending |
 | CPU / UI / resources | Record idle-vs-one-second-ticking CPU, responsiveness and handle/memory behavior over a stated duration; negligible sustained cost, no growth leak | Pending |
+| Clock/DST and accessibility | Timestamp-safe expiry/resume/local display; keyboard/focus/labels/contrast; color is not the only status cue | Pending |
 
 Use only synthetic fixtures in committed previews. Record sanitized observations here; put account-bearing diagnostics in ignored `artifacts/private/`. For live comparison record count, time, app/Codex versions and result without account identifiers. If a positive live state is unavailable, record that limitation and rely on fixtures for positive rendering.
 
